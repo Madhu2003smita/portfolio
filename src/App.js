@@ -1,18 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const skills = [
-  { category: "Languages", items: "JavaScript (ES6+), TypeScript, SQL, Python, C#" },
-  { category: "Frontend", items: "React.js, React Native, Next.js, Tailwind CSS, Context API, Responsive UI" },
+  { category: "Frontend", items: "HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, React Native, Next.js, Tailwind CSS, Context API, Responsive UI" },
   { category: "Backend", items: "Node.js, Express.js, NestJS, .NET, ASP.NET Core, REST API Design & Integration, JWT Authentication, WebSockets, Microservices" },
-  { category: "Databases", items: "PostgreSQL (schema design, migrations, query optimization), MongoDB, TypeORM, Redis" },
+  { category: "Database", items: "SQL, PostgreSQL (schema design, migrations, query optimization), TypeORM, MongoDB (NoSQL), Redis" },
+  { category: "Version Control & DevOps", items: "Git, GitHub, Docker, CI/CD, Postman, Linux, VS Code" },
   { category: "AI / LLM", items: "LLM API Integration, Prompt Design, Structured Outputs, AI Agents, Multi-Agent Systems" },
-  { category: "DevOps", items: "Docker, CI/CD, Git, GitHub, Linux" },
-  { category: "Tools", items: "Postman, VS Code, ChatGPT, GitHub Copilot, Cursor" },
+  { category: "Languages", items: "JavaScript, TypeScript, C#, Python, SQL" },
 ];
 
 const projects = [
   {
-    title: "Agent Run Panel",
+    title: "Task Management System",
+    description:
+      "Full-stack task management application with JWT authentication and CRUD operations. Built a responsive React.js interface for managing and organizing tasks with filtering and prioritization.",
+    github: "https://github.com/Madhu2003smita/task-app",
+    live: null,
+    tags: ["React.js", "Node.js", "JWT"],
+  },
+  {
+    title: "SUT Price & System Settings API",
+    description:
+      "REST APIs for SUT pricing and system configuration using NestJS and TypeScript. PostgreSQL persistence with TypeORM entities, repositories, migrations, and upsert operations. Zod-based request validation and configurable system settings with database-backed fallback handling.",
+    github: null,
+    live: null,
+    tags: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "Zod"],
+  },
+  {
+    title: "AI Agent Run Panel",
     description:
       "Real-time React.js interface for visualizing multi-agent system activity and live streaming outputs. Implemented task lifecycle tracking for parallel execution, failures, retries, and cancellations with event-driven UI behavior.",
     github: "https://github.com/Madhu2003smita/agent-run-panel",
@@ -20,25 +35,9 @@ const projects = [
     tags: ["React.js", "Real-time", "Multi-Agent Systems"],
   },
   {
-    title: "SUT Price & System Settings API",
-    description:
-      "REST APIs for SUT pricing and system configuration using NestJS and TypeScript. PostgreSQL persistence with TypeORM entities, migrations, and upsert operations. Zod-based request validation and configurable system settings with database-backed fallback handling.",
-    github: null,
-    live: null,
-    tags: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "Zod"],
-  },
-  {
-    title: "Task Management System",
-    description:
-      "Full-stack task management application with JWT authentication and CRUD operations. Responsive React.js interface for managing and organizing tasks with filtering and prioritization.",
-    github: "https://github.com/Madhu2003smita/task-app",
-    live: null,
-    tags: ["React.js", "Node.js", "JWT"],
-  },
-  {
     title: "Real-Time Chat Application",
     description:
-      "Real-time messaging application built with Node.js and WebSockets for low-latency, bidirectional communication. Designed a scalable backend architecture to support efficient real-time communication.",
+      "Built a real-time messaging application using WebSockets for low-latency, bidirectional communication. Designed a scalable backend architecture to support efficient real-time communication.",
     github: null,
     live: null,
     tags: ["Node.js", "WebSockets", "Real-time"],
@@ -83,13 +82,39 @@ const experience = [
   },
 ];
 
+const stats = [
+  { label: "Years Experience", value: "1+" },
+  { label: "Projects Built", value: "10+" },
+  { label: "Companies", value: "3" },
+  { label: "Technologies", value: "20+" },
+];
+
 const navLinks = ["About", "Skills", "Experience", "Projects", "Education", "Contact"];
+
+// LinkedIn SVG icon
+function LinkedInIcon({ className }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Show scroll-to-top button after scrolling 400px
+  useEffect(() => {
+    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <div className="bg-gray-950 text-gray-100 min-h-screen font-sans">
+    <div className="bg-gray-950 text-gray-100 min-h-screen font-sans" style={{ scrollBehavior: "smooth" }}>
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur border-b border-gray-800">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -146,6 +171,13 @@ export default function App() {
           Madhusmita Shial
         </h1>
         <p className="mt-4 text-xl text-indigo-400 font-medium">Full Stack Developer | React.js · Node.js · REST APIs · SQL & NoSQL</p>
+
+        {/* Currently at badge */}
+        <span className="mt-3 inline-flex items-center gap-2 text-sm text-green-400 bg-green-900/30 border border-green-700 px-3 py-1 rounded-full">
+          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Currently at PearlThoughts
+        </span>
+
         <p className="mt-4 text-gray-400 max-w-xl text-base leading-relaxed">
           Full Stack Developer with hands-on experience building responsive React.js and React Native
           front-ends and Node.js/NestJS REST APIs backed by PostgreSQL and MongoDB. Skilled in JWT
@@ -165,8 +197,27 @@ export default function App() {
             GitHub
           </a>
           <a
-            href="#contact"
+            href="https://www.linkedin.com/in/madhusmita-shial"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition-colors shadow-md"
+          >
+            <LinkedInIcon className="w-5 h-5" />
+            LinkedIn
+          </a>
+          <a
+            href="/resume.pdf"
+            download
             className="flex items-center gap-2 border border-indigo-500 text-indigo-400 hover:bg-indigo-500 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download Resume
+          </a>
+          <a
+            href="#contact"
+            className="flex items-center gap-2 border border-gray-600 text-gray-300 hover:border-indigo-500 hover:text-indigo-400 px-6 py-3 rounded-lg font-medium transition-colors"
           >
             Contact Me
           </a>
@@ -190,7 +241,19 @@ export default function App() {
           Comfortable working in agile teams, debugging production issues, and delivering maintainable,
           well-structured code.
         </p>
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+
+        {/* Stats */}
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          {stats.map((stat) => (
+            <div key={stat.label} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-indigo-500 transition-colors">
+              <p className="text-3xl font-extrabold text-indigo-400">{stat.value}</p>
+              <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Contact info cards */}
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           <div className="bg-gray-800 rounded-lg p-4">
             <p className="text-indigo-400 font-semibold">Email</p>
             <p className="text-gray-300 mt-1 break-all">madhusmitabarsa19@gmail.com</p>
@@ -351,6 +414,15 @@ export default function App() {
               madhusmitabarsa19@gmail.com
             </a>
             <a
+              href="https://www.linkedin.com/in/madhusmita-shial"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+            >
+              <LinkedInIcon className="w-5 h-5" />
+              LinkedIn
+            </a>
+            <a
               href="https://github.com/Madhu2003smita"
               target="_blank"
               rel="noreferrer"
@@ -367,8 +439,21 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="bg-gray-950 border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
-        <p>Designed & Built by Madhusmita Shial</p>
+        <p>© 2026 Designed & Built by Madhusmita Shial</p>
       </footer>
+
+      {/* SCROLL TO TOP */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+          className="fixed bottom-8 right-8 z-50 w-11 h-11 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }
