@@ -1,37 +1,44 @@
 import { useState } from "react";
 
 const skills = [
-  { category: "Languages", items: "JavaScript (ES6+), TypeScript (Basics), SQL, Python (Basics)" },
-  { category: "Backend", items: "Node.js, Express.js, NestJS, REST API Development" },
-  { category: "Frontend", items: "React.js, Next.js (Basics), Tailwind CSS, Responsive UI" },
-  { category: "Databases", items: "PostgreSQL, MongoDB, Redis (Basics)" },
-  { category: "Concepts", items: "Authentication (JWT), Microservices (Basics), Scalable Systems, OOP" },
-  { category: "DevOps", items: "Docker (Basics), CI/CD (Basics)" },
-  { category: "Tools", items: "Git, GitHub, Postman, VS Code" },
-  { category: "AI Tools", items: "ChatGPT, GitHub Copilot, Cursor" },
+  { category: "Languages", items: "JavaScript (ES6+), TypeScript, SQL, Python, C#" },
+  { category: "Frontend", items: "React.js, React Native, Next.js, Tailwind CSS, Context API, Responsive UI" },
+  { category: "Backend", items: "Node.js, Express.js, NestJS, .NET, ASP.NET Core, REST API Design & Integration, JWT Authentication, WebSockets, Microservices" },
+  { category: "Databases", items: "PostgreSQL (schema design, migrations, query optimization), MongoDB, TypeORM, Redis" },
+  { category: "AI / LLM", items: "LLM API Integration, Prompt Design, Structured Outputs, AI Agents, Multi-Agent Systems" },
+  { category: "DevOps", items: "Docker, CI/CD, Git, GitHub, Linux" },
+  { category: "Tools", items: "Postman, VS Code, ChatGPT, GitHub Copilot, Cursor" },
 ];
 
 const projects = [
   {
     title: "Agent Run Panel",
     description:
-      "Real-time event-driven UI to visualize a multi-agent system. Implemented task lifecycle tracking, parallel task grouping, and streaming outputs. Designed intuitive UI for non-technical users with clear system visibility.",
+      "Real-time React.js interface for visualizing multi-agent system activity and live streaming outputs. Implemented task lifecycle tracking for parallel execution, failures, retries, and cancellations with event-driven UI behavior.",
     github: "https://github.com/Madhu2003smita/agent-run-panel",
     live: "https://69cf445799c452d43a6ac7c1-extraordinary-basbousa-fd9e1f.netlify.app/",
-    tags: ["React", "Real-time", "Multi-agent"],
+    tags: ["React.js", "Real-time", "Multi-Agent Systems"],
+  },
+  {
+    title: "SUT Price & System Settings API",
+    description:
+      "REST APIs for SUT pricing and system configuration using NestJS and TypeScript. PostgreSQL persistence with TypeORM entities, migrations, and upsert operations. Zod-based request validation and configurable system settings with database-backed fallback handling.",
+    github: null,
+    live: null,
+    tags: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "Zod"],
   },
   {
     title: "Task Management System",
     description:
-      "Full stack app built with React.js, Node.js, and MongoDB. Implemented authentication, CRUD operations, filtering, and task prioritization. Designed responsive UI and optimized performance.",
-    github: "https://github.com/Madhu2003smita/task-app.git",
+      "Full-stack task management application with JWT authentication and CRUD operations. Responsive React.js interface for managing and organizing tasks with filtering and prioritization.",
+    github: "https://github.com/Madhu2003smita/task-app",
     live: null,
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["React.js", "Node.js", "JWT"],
   },
   {
-    title: "Real-time Chat Application",
+    title: "Real-Time Chat Application",
     description:
-      "Built using Node.js and WebSockets for real-time communication. Implemented efficient messaging system and data handling. Designed backend architecture for real-time data flow.",
+      "Real-time messaging application built with Node.js and WebSockets for low-latency, bidirectional communication. Designed a scalable backend architecture to support efficient real-time communication.",
     github: null,
     live: null,
     tags: ["Node.js", "WebSockets", "Real-time"],
@@ -40,28 +47,38 @@ const projects = [
 
 const experience = [
   {
-    role: "Backend Developer",
-    company: "Must Fintech",
-    period: "Aug 2025 – March 2026",
+    role: "Software Developer",
+    company: "PearlThoughts",
+    period: "Jul 2026 – Present",
     points: [
-      "Developed scalable backend services using NestJS with modular architecture.",
-      "Designed and implemented RESTful APIs with authentication, validation, and error handling.",
-      "Worked with PostgreSQL and MongoDB for efficient data modeling and queries.",
-      "Improved application performance by debugging and resolving API and data-related issues.",
-      "Collaborated with frontend and deployment teams to deliver end-to-end features.",
+      "Contribute to backend feature development in an agile team, from implementation through testing, debugging, and maintenance.",
+      "Troubleshoot and resolve application issues while collaborating closely with team members on assigned tasks.",
+      "Apply backend technologies and team development practices to deliver reliable, maintainable features.",
+      "Collaborate with team members to complete assigned project tasks and application updates.",
     ],
   },
   {
-    role: "Intern",
-    company: "Ladybird Web Solution Pvt Ltd",
-    period: "Jun 2024 – Sept 2024",
+    role: "Backend Developer",
+    company: "Must Fintech",
+    period: "Aug 2025 – Mar 2026",
     points: [
-      "Developed responsive web features using HTML, CSS, and JavaScript.",
-      "Built cross-platform mobile features using React Native.",
-      "Integrated RESTful APIs for efficient data handling and communication.",
-      "Used Context API for state management in frontend applications.",
-      "Assisted in debugging, testing, and improving application performance.",
-      "Collaborated with team members following structured development practices.",
+      "Developed scalable Node.js/NestJS backend services with a modular, maintainable architecture.",
+      "Designed and implemented RESTful APIs with JWT authentication, input validation, and structured error handling.",
+      "Designed data models and optimized queries across PostgreSQL (relational) and MongoDB (NoSQL).",
+      "Troubleshot and resolved API and data-layer performance bottlenecks to improve application responsiveness.",
+      "Collaborated with frontend and deployment teams in an agile environment to deliver production-ready features on schedule.",
+    ],
+  },
+  {
+    role: "Frontend & Mobile Intern",
+    company: "Ladybird Web Solution Pvt. Ltd.",
+    period: "Jun 2024 – Sep 2024",
+    points: [
+      "Built cross-platform mobile components using React Native, contributing directly to mobile application features.",
+      "Developed responsive web features using HTML, CSS, and JavaScript alongside mobile development work.",
+      "Integrated RESTful APIs for frontend and backend data communication across web and mobile surfaces.",
+      "Used Context API for frontend state management in component-driven applications.",
+      "Assisted with debugging, testing, and performance improvements following structured development practices.",
     ],
   },
 ];
@@ -128,10 +145,12 @@ export default function App() {
         <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
           Madhusmita Shial
         </h1>
-        <p className="mt-4 text-xl text-indigo-400 font-medium">Full Stack Developer</p>
+        <p className="mt-4 text-xl text-indigo-400 font-medium">Full Stack Developer | React.js · Node.js · REST APIs · SQL & NoSQL</p>
         <p className="mt-4 text-gray-400 max-w-xl text-base leading-relaxed">
-          Motivated Full Stack Developer with experience in React and Node.js, skilled in building
-          scalable applications and leveraging AI tools to accelerate development.
+          Full Stack Developer with hands-on experience building responsive React.js and React Native
+          front-ends and Node.js/NestJS REST APIs backed by PostgreSQL and MongoDB. Skilled in JWT
+          authentication, relational schema design, API integration, and Git-based agile workflows
+          with CI/CD and Docker.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
@@ -164,12 +183,14 @@ export default function App() {
         <h2 className="text-3xl font-bold text-white mb-2">About Me</h2>
         <div className="w-12 h-1 bg-indigo-500 mb-6 rounded"></div>
         <p className="text-gray-300 text-lg leading-relaxed">
-          I'm a Full Stack Developer with hands-on experience building scalable web applications
-          using React and Node.js. I enjoy working across the stack — from designing RESTful APIs
-          and database schemas to crafting responsive, user-friendly interfaces. I leverage AI tools
-          like ChatGPT and GitHub Copilot to ship faster without compromising quality.
+          Full Stack Developer with hands-on experience building responsive React.js and React Native
+          front-ends and Node.js/Express.js and NestJS REST APIs backed by PostgreSQL and MongoDB.
+          Experienced in relational schema design, migrations, query optimization, API design and
+          integration, JWT authentication, and Git-based collaborative workflows with CI/CD and Docker.
+          Comfortable working in agile teams, debugging production issues, and delivering maintainable,
+          well-structured code.
         </p>
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           <div className="bg-gray-800 rounded-lg p-4">
             <p className="text-indigo-400 font-semibold">Email</p>
             <p className="text-gray-300 mt-1 break-all">madhusmitabarsa19@gmail.com</p>
@@ -177,6 +198,10 @@ export default function App() {
           <div className="bg-gray-800 rounded-lg p-4">
             <p className="text-indigo-400 font-semibold">Phone</p>
             <p className="text-gray-300 mt-1">+91 8114788283</p>
+          </div>
+          <div className="bg-gray-800 rounded-lg p-4">
+            <p className="text-indigo-400 font-semibold">Location</p>
+            <p className="text-gray-300 mt-1">Bengaluru, India</p>
           </div>
           <div className="bg-gray-800 rounded-lg p-4">
             <p className="text-indigo-400 font-semibold">Education</p>
