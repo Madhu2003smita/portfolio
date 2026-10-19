@@ -31,7 +31,7 @@ const projects = [
     description:
       "Real-time React.js interface for visualizing multi-agent system activity and live streaming outputs. Implemented task lifecycle tracking for parallel execution, failures, retries, and cancellations with event-driven UI behavior.",
     github: "https://github.com/Madhu2003smita/agent-run-panel",
-    live: "https://69cf445799c452d43a6ac7c1-extraordinary-basbousa-fd9e1f.netlify.app/",
+    live: "https://agent-run-panel-olive.vercel.app/",
     tags: ["React.js", "Real-time", "Multi-Agent Systems"],
   },
   {
