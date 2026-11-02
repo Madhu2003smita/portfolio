@@ -35,6 +35,14 @@ const projects = [
     tags: ["React.js", "Real-time", "Multi-Agent Systems"],
   },
   {
+    title: "JanaSeva – Govt. Workflow Management",
+    description:
+      "Bilingual (English & Odia) government workflow management app to digitize Odisha revenue administration. Features role-based access control, multi-stage document verification, AI-assisted document analysis, application audit trails, and a dashboard for tracking citizen applications.",
+    github: "https://github.com/Madhu2003smita/Janaseva",
+    live: "https://janaseva-beta.vercel.app/",
+    tags: ["React.js", "TypeScript", "Node.js", "MongoDB", "JWT", "Tailwind CSS"],
+  },
+  {
     title: "Real-Time Chat Application",
     description:
       "Built a real-time messaging application using WebSockets for low-latency, bidirectional communication. Designed a scalable backend architecture to support efficient real-time communication.",
