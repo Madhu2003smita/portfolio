@@ -43,6 +43,14 @@ const projects = [
     tags: ["React.js", "TypeScript", "Node.js", "MongoDB", "JWT", "Tailwind CSS"],
   },
   {
+    title: "CareerAI – AI-Powered Career Assistant",
+    description:
+      "Full-stack AI career assistant for resume analysis, ATS optimization, job description matching, and interview preparation. Extracts skills, calculates resume-job compatibility scores, generates ATS-friendly resumes, and identifies skill gaps — all in one platform.",
+    github: "https://github.com/Madhu2003smita/CareerAI",
+    live: null,
+    tags: ["React.js", "Node.js", "Python", "FastAPI", "SQLite", "REST APIs"],
+  },
+  {
     title: "Real-Time Chat Application",
     description:
       "Built a real-time messaging application using WebSockets for low-latency, bidirectional communication. Designed a scalable backend architecture to support efficient real-time communication.",
