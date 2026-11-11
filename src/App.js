@@ -1,24 +1,23 @@
 import { useState, useEffect } from "react";
 
 const skills = [
-  { category: "Frontend", items: "HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, React Native, Next.js, Tailwind CSS, Context API, Responsive UI" },
-  { category: "Backend", items: "Node.js, Express.js, NestJS, .NET, ASP.NET Core, REST API Design & Integration, JWT Authentication, WebSockets, Microservices" },
-  { category: "Database", items: "SQL, PostgreSQL (schema design, migrations, query optimization), TypeORM, MongoDB (NoSQL), Redis" },
-  { category: "Version Control & DevOps", items: "Git, GitHub, Docker, CI/CD, Postman, Linux, VS Code" },
-  { category: "AI / LLM", items: "LLM API Integration, Prompt Design, Structured Outputs, AI Agents, Multi-Agent Systems" },
-  { category: "Languages", items: "JavaScript, TypeScript, C#, Python, SQL" },
+  { category: "AI & LLM", items: "LLM API Integration, Prompt Design, Structured Outputs, AI Agents, Multi-Agent Systems" },
+  { category: "Frontend", items: "HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, React Native, Next.js, Tailwind CSS, Context API" },
+  { category: "Backend & APIs", items: "Node.js, Express.js, NestJS, .NET, ASP.NET Core, REST API Design & Integration, JWT Authentication, WebSockets, Microservices" },
+  { category: "Databases", items: "SQL, PostgreSQL, TypeORM, MongoDB, Redis" },
+  { category: "Tools & DevOps", items: "Git, GitHub, Docker, CI/CD, Postman, Linux, VS Code" },
+  { category: "Programming", items: "JavaScript, TypeScript, Python, C#, SQL" },
 ];
 
 const projects = [
   {
-    title: "Task Management System",
+    title: "CareerAI – AI-Powered Career Assistant",
     description:
-      "Full-stack task management application with JWT authentication and CRUD operations. Built a responsive React.js interface for managing and organizing tasks with filtering and prioritization.",
-    github: "https://github.com/Madhu2003smita/task-app",
+      "Full-stack AI career assistant for resume analysis, ATS optimization, job description matching, and interview preparation. Extracts skills, calculates resume-job compatibility scores, generates ATS-friendly resumes, and identifies skill gaps — all in one platform.",
+    github: "https://github.com/Madhu2003smita/CareerAI",
     live: null,
-    tags: ["React.js", "Node.js", "JWT"],
+    tags: ["React.js", "Node.js", "Python", "FastAPI", "SQLite", "REST APIs"],
   },
-
   {
     title: "AI Agent Run Panel",
     description:
@@ -28,20 +27,20 @@ const projects = [
     tags: ["React.js", "Real-time", "Multi-Agent Systems"],
   },
   {
+    title: "Task Management System",
+    description:
+      "Full-stack task management application with JWT authentication and CRUD operations. Built a responsive React.js interface for managing and organizing tasks with filtering and prioritization.",
+    github: "https://github.com/Madhu2003smita/task-app",
+    live: null,
+    tags: ["React.js", "Node.js", "JWT"],
+  },
+  {
     title: "JanaSeva – Govt. Workflow Management",
     description:
       "Bilingual (English & Odia) government workflow management app to digitize Odisha revenue administration. Features role-based access control, multi-stage document verification, AI-assisted document analysis, application audit trails, and a dashboard for tracking citizen applications.",
     github: "https://github.com/Madhu2003smita/Janaseva",
     live: "https://janaseva-beta.vercel.app/",
     tags: ["React.js", "TypeScript", "Node.js", "MongoDB", "JWT", "Tailwind CSS"],
-  },
-  {
-    title: "CareerAI – AI-Powered Career Assistant",
-    description:
-      "Full-stack AI career assistant for resume analysis, ATS optimization, job description matching, and interview preparation. Extracts skills, calculates resume-job compatibility scores, generates ATS-friendly resumes, and identifies skill gaps — all in one platform.",
-    github: "https://github.com/Madhu2003smita/CareerAI",
-    live: null,
-    tags: ["React.js", "Node.js", "Python", "FastAPI", "SQLite", "REST APIs"],
   },
   {
     title: "Real-Time Chat Application",
@@ -59,10 +58,9 @@ const experience = [
     company: "PearlThoughts",
     period: "Jul 2026 – Present",
     points: [
-      "Contribute to backend feature development in an agile team, from implementation through testing, debugging, and maintenance.",
-      "Troubleshoot and resolve application issues while collaborating closely with team members on assigned tasks.",
-      "Apply backend technologies and team development practices to deliver reliable, maintainable features.",
-      "Collaborate with team members to complete assigned project tasks and application updates.",
+      "Contribute to backend feature development in an Agile team, from implementation through testing, debugging, and maintenance.",
+      "Troubleshoot application issues and collaborate with team members to deliver reliable, maintainable features.",
+      "Support assigned project tasks and application updates using established team development practices.",
     ],
   },
   {
@@ -70,11 +68,9 @@ const experience = [
     company: "Must Fintech",
     period: "Aug 2025 – Mar 2026",
     points: [
-      "Developed scalable Node.js/NestJS backend services with a modular, maintainable architecture.",
-      "Designed and implemented RESTful APIs with JWT authentication, input validation, and structured error handling.",
-      "Designed data models and optimized queries across PostgreSQL (relational) and MongoDB (NoSQL).",
-      "Troubleshot and resolved API and data-layer performance bottlenecks to improve application responsiveness.",
-      "Collaborated with frontend and deployment teams in an agile environment to deliver production-ready features on schedule.",
+      "Developed modular Node.js/NestJS backend services and RESTful APIs with JWT authentication, input validation, and structured error handling.",
+      "Designed data models and optimized queries across PostgreSQL and MongoDB.",
+      "Resolved API and data-layer performance bottlenecks and collaborated with frontend and deployment teams.",
     ],
   },
   {
@@ -82,11 +78,9 @@ const experience = [
     company: "Ladybird Web Solution Pvt. Ltd.",
     period: "Jun 2024 – Sep 2024",
     points: [
-      "Built cross-platform mobile components using React Native, contributing directly to mobile application features.",
-      "Developed responsive web features using HTML, CSS, and JavaScript alongside mobile development work.",
-      "Integrated RESTful APIs for frontend and backend data communication across web and mobile surfaces.",
-      "Used Context API for frontend state management in component-driven applications.",
-      "Assisted with debugging, testing, and performance improvements following structured development practices.",
+      "Built cross-platform mobile components using React Native and developed responsive web features using HTML, CSS, and JavaScript.",
+      "Integrated REST APIs and used Context API for frontend state management.",
+      "Assisted with debugging, testing, and performance improvements.",
     ],
   },
 ];
@@ -179,19 +173,16 @@ export default function App() {
         <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
           Madhusmita Shial
         </h1>
-        <p className="mt-4 text-xl text-indigo-400 font-medium">Full Stack Developer | React.js · Node.js · REST APIs · SQL & NoSQL</p>
-
+        <p className="mt-4 text-xl text-indigo-400 font-medium">Full Stack Developer | React.js · Node.js · AI & LLM Integration · REST APIs</p>
         {/* Currently at badge */}
         <span className="mt-3 inline-flex items-center gap-2 text-sm text-green-400 bg-green-900/30 border border-green-700 px-3 py-1 rounded-full">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
           Currently at PearlThoughts
         </span>
-
         <p className="mt-4 text-gray-400 max-w-xl text-base leading-relaxed">
-          Full Stack Developer with hands-on experience building responsive React.js and React Native
-          front-ends and Node.js/NestJS REST APIs backed by PostgreSQL and MongoDB. Skilled in JWT
-          authentication, relational schema design, API integration, and Git-based agile workflows
-          with CI/CD and Docker.
+          Full Stack Developer with hands-on experience building React.js/React Native apps and
+          Node.js/NestJS REST APIs. Familiar with LLM API integration, AI agents, and multi-agent
+          systems. Experienced in JWT authentication, PostgreSQL, MongoDB, and Agile development.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
@@ -243,12 +234,12 @@ export default function App() {
         <h2 className="text-3xl font-bold text-white mb-2">About Me</h2>
         <div className="w-12 h-1 bg-indigo-500 mb-6 rounded"></div>
         <p className="text-gray-300 text-lg leading-relaxed">
-          Full Stack Developer with hands-on experience building responsive React.js and React Native
-          front-ends and Node.js/Express.js and NestJS REST APIs backed by PostgreSQL and MongoDB.
-          Experienced in relational schema design, migrations, query optimization, API design and
-          integration, JWT authentication, and Git-based collaborative workflows with CI/CD and Docker.
-          Comfortable working in agile teams, debugging production issues, and delivering maintainable,
-          well-structured code.
+          Computer Science graduate and Full Stack Developer with hands-on experience building
+          responsive React.js and React Native applications and Node.js/NestJS REST APIs. Familiar
+          with LLM API integration, prompt design, structured outputs, AI agents, and multi-agent
+          system interfaces. Experienced in API design and integration, JWT authentication,
+          PostgreSQL and MongoDB, debugging, and collaborative Agile development. Interested in
+          building reliable AI-powered automation workflows and intelligent business solutions.
         </p>
 
         {/* Stats */}
