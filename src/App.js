@@ -18,14 +18,7 @@ const projects = [
     live: null,
     tags: ["React.js", "Node.js", "JWT"],
   },
-  {
-    title: "SUT Price & System Settings API",
-    description:
-      "REST APIs for SUT pricing and system configuration using NestJS and TypeScript. PostgreSQL persistence with TypeORM entities, repositories, migrations, and upsert operations. Zod-based request validation and configurable system settings with database-backed fallback handling.",
-    github: null,
-    live: null,
-    tags: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "Zod"],
-  },
+
   {
     title: "AI Agent Run Panel",
     description:
